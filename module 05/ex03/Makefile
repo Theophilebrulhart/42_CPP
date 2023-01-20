@@ -6,11 +6,11 @@
 #    By: tbrulhar <tbrulhar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/11 11:08:44 by tbrulhar          #+#    #+#              #
-#    Updated: 2023/01/20 11:54:03 by tbrulhar         ###   ########.fr        #
+#    Updated: 2023/01/20 13:57:36 by tbrulhar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp  RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp  RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 OBJ = $(SRC:.cpp=.o) 
 GPP = c++ 
 RM = rm -f 
