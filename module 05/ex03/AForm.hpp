@@ -6,7 +6,7 @@
 /*   By: tbrulhar <tbrulhar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:51:11 by tbrulhar          #+#    #+#             */
-/*   Updated: 2023/01/20 12:06:35 by tbrulhar         ###   ########.fr       */
+/*   Updated: 2023/01/23 12:05:24 by tbrulhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class AForm
 		AForm(AForm const &cpy);
 		AForm(std::string const AFormName, int signGrade, int execGrade);
 		AForm	&operator=(AForm const &rhs);
-		~AForm(void);
+		virtual ~AForm(void);
 
 		void	setAFormName(std::string const name);
 		void	setI(bool i);
