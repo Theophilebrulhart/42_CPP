@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbrulhar <tbrulhar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 18:57:37 by tbrulhar          #+#    #+#             */
-/*   Updated: 2023/01/24 10:46:48 by tbrulhar         ###   ########.fr       */
+/*   Created: 2023/01/24 14:36:37 by tbrulhar          #+#    #+#             */
+/*   Updated: 2023/01/24 14:48:10 by tbrulhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-# define DATA_HPP
-# include <iostream> 
+#include "Vertex.class.tpp"
 
 
-class Data
+int main(void)
 {
-    public:
-        Data(void);
-        Data(Data const &cpy);
-        Data &operator=(Data const &rhs);
-       ~Data(void);
+	Vertex<int>		v1(34, 566, 53);
+	Vertex<>		v2(87, 324, 43);
 
-    int     i;
-    char    c;
+	std::cout << v1;
+	std::cout << v2;
 
-};
-
-std::ostream & operator<<(std::ostream &o, Data const &rhs);
-
-#endif
+	return (0);
+}

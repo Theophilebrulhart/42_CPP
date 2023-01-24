@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbrulhar <tbrulhar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 18:57:37 by tbrulhar          #+#    #+#             */
-/*   Updated: 2023/01/24 10:46:48 by tbrulhar         ###   ########.fr       */
+/*   Created: 2023/01/24 11:01:00 by tbrulhar          #+#    #+#             */
+/*   Updated: 2023/01/24 12:55:07 by tbrulhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-# define DATA_HPP
+#ifndef BASE_HPP
+# define BASE_HPP
 # include <iostream> 
 
-
-class Data
+class Base
 {
     public:
-        Data(void);
-        Data(Data const &cpy);
-        Data &operator=(Data const &rhs);
-       ~Data(void);
-
-    int     i;
-    char    c;
+    
+       virtual ~Base(void);
 
 };
 
-std::ostream & operator<<(std::ostream &o, Data const &rhs);
+class A : public Base
+{
+
+};
+class B : public Base
+{
+
+};
+class C : public Base
+{
+
+};
+Base    *generate(void);
+void	identify(Base &p);
+void	identify(Base *p);
 
 #endif

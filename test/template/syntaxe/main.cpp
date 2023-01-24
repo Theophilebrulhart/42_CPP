@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbrulhar <tbrulhar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 18:57:37 by tbrulhar          #+#    #+#             */
-/*   Updated: 2023/01/24 10:46:48 by tbrulhar         ###   ########.fr       */
+/*   Created: 2023/01/24 14:18:31 by tbrulhar          #+#    #+#             */
+/*   Updated: 2023/01/24 14:37:29 by tbrulhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-# define DATA_HPP
-# include <iostream> 
+#include <iostream>
+#include <iomanip>
 
+template< typename T>
 
-class Data
+T max(T const &x, T const &y)
 {
-    public:
-        Data(void);
-        Data(Data const &cpy);
-        Data &operator=(Data const &rhs);
-       ~Data(void);
+	return ((x >= y) ? x : y);
+}
 
-    int     i;
-    char    c;
+int main(void)
+{
+	int a = 21;
+	int b = 42;
 
-};
-
-std::ostream & operator<<(std::ostream &o, Data const &rhs);
-
-#endif
+	std::cout << "Max of " << a << " and " << b << " is : ";
+	std::cout << max<int>(a, b) << std::endl;					// Explicite instantation du template T;
+	std::cout << max(a, b) << std::endl;						//Implicite instantation du template T;
+}

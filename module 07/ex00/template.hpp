@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   template.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbrulhar <tbrulhar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 18:57:37 by tbrulhar          #+#    #+#             */
-/*   Updated: 2023/01/24 10:46:48 by tbrulhar         ###   ########.fr       */
+/*   Created: 2023/01/24 15:20:04 by tbrulhar          #+#    #+#             */
+/*   Updated: 2023/01/24 15:25:29 by tbrulhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-# define DATA_HPP
-# include <iostream> 
+#include <iostream>
 
-
-class Data
+template <typename T>
+void	swap(T &x, T &y)
 {
-    public:
-        Data(void);
-        Data(Data const &cpy);
-        Data &operator=(Data const &rhs);
-       ~Data(void);
+	T	tmp;
+	tmp = x;
+	x = y;
+	y = tmp;
+	return ;
+}
 
-    int     i;
-    char    c;
+template <typename T>
+T	const &max(T const &x, T const &y)
+{
+	return ((x > y) ? x : y);
+}
 
-};
+template <typename T>
+T	const &min(T const &x, T const &y)
+{
+	return ((x < y) ? x : y);
+}
 
-std::ostream & operator<<(std::ostream &o, Data const &rhs);
-
-#endif

@@ -6,7 +6,7 @@
 /*   By: tbrulhar <tbrulhar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:28:17 by tbrulhar          #+#    #+#             */
-/*   Updated: 2023/01/23 16:36:48 by tbrulhar         ###   ########.fr       */
+/*   Updated: 2023/01/24 13:05:00 by tbrulhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ bool	isChar(std::string literal)
 
 bool	isInt(std::string literal)
 {	
-	for (size_t i; i < literal.length(); i++)
+	for (size_t i = 0; i < literal.length(); i++)
 	{
 		if (i == 0 && literal[i] == '-')
 			continue ;
@@ -43,7 +43,7 @@ int	isFloat(std::string literal)
 	int	f	 = 0;
 	int pres = 0;
 
-	for (size_t i; i < literal.length(); i++)
+	for (size_t i = 0; i < literal.length(); i++)
 	{
 		if (literal[i] == '-' || literal[i] == '+')
 		{
@@ -80,7 +80,7 @@ int	isDub(std::string literal)
 	int	dote = 0;
 	int	pres = 0;
 
-	for (size_t i; i < literal.length(); i++)
+	for (size_t i = 0; i < literal.length(); i++)
 	{
 		if (literal[i] == '-' || literal[i] == '+')
 		{
