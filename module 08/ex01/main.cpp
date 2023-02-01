@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theophilebrulhart <theophilebrulhart@st    +#+  +:+       +#+        */
+/*   By: tbrulhar <tbrulhar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 15:37:31 by theophilebr       #+#    #+#             */
-/*   Updated: 2023/01/31 16:58:52 by theophilebr      ###   ########.fr       */
+/*   Updated: 2023/02/01 17:22:55 by tbrulhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int main(void)
 {
-	Span spanA(23);
+	Span spanA(99);
 	
+	srand(time(NULL));
 	try 
 	{
 		spanA.shortestSpan();
@@ -24,10 +25,18 @@ int main(void)
 	{
 		std::cerr << "not enough number in range\n";
 	}
-	spanA.addNumber(33);
-	spanA.addNumber(67);
-	spanA.addNumber(1);
-	spanA.addNumber(2);
+	try
+	{
+		for (int i = 0; i < 10000; i++)
+		{
+			spanA.addNumber(rand());
+		}
+	}
+	catch (const std::exception &e)
+		{
+			std::cerr << "Span to small..you can't add more number to it\n";
+		}
+	
 	try 
 	{
 		spanA.longestSpan();

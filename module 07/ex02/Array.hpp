@@ -6,7 +6,7 @@
 /*   By: tbrulhar <tbrulhar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:07:11 by tbrulhar          #+#    #+#             */
-/*   Updated: 2023/01/24 17:12:28 by tbrulhar         ###   ########.fr       */
+/*   Updated: 2023/01/30 14:09:08 by tbrulhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,19 +60,11 @@ class Array
             std::cout << "An array is deleted\n";
         }
 
-
         T & operator[](unsigned int n)
         {
-            // try
-            // {
-                if (n > _n - 1)
-                    throw std::exception();
-                return (_array[n]);
-            // }
-            // catch (std::exception e)
-            // {
-            //     std::cerr << "\n\n\n\n\n🤬🤬🤬🤬ARE YOU TRYING TO MAKE ME SEG ??🤬🤬🤬🤬🤬\n\n\n\n";
-            // }
+            if (n > _n - 1)
+                throw std::exception();
+            return (_array[n]);
         }
 
         unsigned int   size() const
