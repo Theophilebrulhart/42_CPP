@@ -6,7 +6,7 @@
 /*   By: tbrulhar <tbrulhar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 15:38:29 by theophilebr       #+#    #+#             */
-/*   Updated: 2023/02/01 17:18:39 by tbrulhar         ###   ########.fr       */
+/*   Updated: 2023/02/02 12:20:31 by tbrulhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,24 @@ void	Span::addNumber(int value)
 	return ;
 }
 
+void	Span::addNumbers(unsigned int count, ...)
+{
+	if (count <= _size)
+	{
+		va_list	arg;
+
+		va_start(arg, count);
+		for (unsigned int i = 0; i < count; i++)
+		{
+			_lst.push_back(va_arg(arg, int));
+		}
+		va_end(arg);
+	}
+	else
+		throw std::exception();
+	
+}
+
 void	Span::shortestSpan()
 {
 	if (_lst.size() < 2)
@@ -87,4 +105,14 @@ void	Span::longestSpan() const
 	std::cout << "The longest span in range is : " 
 	<< *std::max_element(_lst.begin(), _lst.end()) - *std::min_element(_lst.begin(), _lst.end())
 	<< std::endl;
+}
+
+void	Span::printSpan() const
+{
+	int size = _size;
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << _lst[i] << std::endl;
+	}
+	return ;
 }
